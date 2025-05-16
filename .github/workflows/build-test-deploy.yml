@@ -10,6 +10,7 @@ jobs:
         run: echo "$(cat hello_world.txt)"
         
   build:
+    needs: hello-world-job
     runs-on: ubuntu-latest
     steps: 
       - name: Check out repository code
@@ -34,5 +35,7 @@ jobs:
           node-version: '18.x'
       - name: 安装npm
         run: npm install
+      - name: 构建node.js
+        run: npm run build
       - name: 测试
         run: npm test
