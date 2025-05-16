@@ -38,7 +38,7 @@ jobs:
       - name: 构建node.js
         run: npm run build
       - name: 测试
-        run: npm test
+        run: npm run test
   deploy:
     needs: test
 
